@@ -79,9 +79,9 @@ Repo/
 ### CI/CD Fullstack Pipeline (GitLab)
 
  [Исходники и конфиги](https://github.com/Markovskoy/scripts-and-pet-projects/tree/main/work_scripts/ci_cd/gitlab/fullstack_ci)
- Используемые технологии: GitLab CI/CD, Maven, npm, Docker, systemd, nginx
+ Используемые технологии: GitLab CI/CD, Maven, npm, , Semgrep, Nodejs-scan, SonarQube
  
- Цель: автоматическая сборка frontend и backend, генерация артефактов и уведомление в телеграмме
+ Цель: автоматическая сборка frontend и backend, статический анализ безопасности и качества кода, генерация артефактов и уведомление в телеграмме
 
 ####  Пример пайплайна в GitLab
 <img width="801" height="267" alt="image" src="https://github.com/user-attachments/assets/d7aa67d3-4cfe-40da-95b2-9b5f9bf7f171" />
