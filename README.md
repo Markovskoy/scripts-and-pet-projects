@@ -84,7 +84,8 @@ Repo/
  Цель: автоматическая сборка frontend и backend, генерация артефактов и уведомление в телеграмме
 
 ####  Пример пайплайна в GitLab
-<img width="400" height="180" alt="image" src="https://github.com/user-attachments/assets/60258a6b-6a1c-4e9d-b259-3596252c3512" />
+<img width="801" height="267" alt="image" src="https://github.com/user-attachments/assets/d7aa67d3-4cfe-40da-95b2-9b5f9bf7f171" />
+
 
 
 ---
