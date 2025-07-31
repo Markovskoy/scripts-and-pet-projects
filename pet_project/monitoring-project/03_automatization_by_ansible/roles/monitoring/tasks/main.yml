@@ -1,0 +1,44 @@
+﻿- name: Создаём директории /opt/monitoring/{configs,data,dashboards}
+  file:
+    path: "/opt/monitoring/{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - configs
+    - data/grafana
+    - data/loki
+    - data/prometheus
+    - dashboards
+
+- name: Копируем docker-compose.yml
+  copy:
+    src: docker-compose.yml
+    dest: /opt/monitoring/docker-compose.yml
+    mode: '0644'
+
+- name: Копируем loki-config.yaml
+  copy:
+    src: loki-config.yaml
+    dest: /opt/monitoring/configs/loki-config.yaml
+    mode: '0644'
+
+- name: Копируем prometheus.yml с подстановкой IP
+  template:
+    src: prometheus.yml.j2
+    dest: /opt/monitoring/configs/prometheus.yml
+    mode: '0644'
+
+- name: Копируем systemd unit для node_exporter
+  copy:
+    src: node_exporter.service
+    dest: /etc/systemd/system/node_exporter.service
+    mode: '0644'
+
+- name: Копируем setup.sh
+  copy:
+    src: setup.sh
+    dest: /tmp/setup_monitoring.sh
+    mode: '0755'
+
+- name: Запускаем setup.sh на MONITORING-сервере
+  command: /tmp/setup_monitoring.sh

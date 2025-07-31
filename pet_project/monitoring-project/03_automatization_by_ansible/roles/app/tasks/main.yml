@@ -1,0 +1,34 @@
+﻿- name: Создаём директорию для promtail
+  file:
+    path: "{{ promtail_dir }}"
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Копируем promtail config с подстановкой IP monitoring-сервера
+  template:
+    src: promtail-config.yaml.j2
+    dest: "{{ promtail_dir }}/promtail-config.yaml"
+    mode: '0644'
+
+- name: Копируем docker-compose.promtail.yml
+  copy:
+    src: docker-compose.promtail.yml
+    dest: "{{ promtail_dir }}/docker-compose.yml"
+    mode: '0644'
+
+- name: Копируем systemd сервис node_exporter
+  copy:
+    src: node_exporter.service
+    dest: /etc/systemd/system/node_exporter.service
+    mode: '0644'
+
+- name: Копируем setup.sh
+  copy:
+    src: setup.sh
+    dest: /tmp/setup_promtail.sh
+    mode: '0755'
+
+- name: Запускаем setup.sh на APP-сервере
+  command: /tmp/setup_promtail.sh

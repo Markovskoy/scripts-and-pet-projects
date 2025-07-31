@@ -1,0 +1,42 @@
+﻿- name: Ввод IP-адресов
+  hosts: localhost
+  gather_facts: false
+  vars_prompt:
+    - name: "app_ip"
+      prompt: "Введите IP APP-сервера (в формате x.x.x.x)"
+      private: false
+    - name: "monitoring_ip"
+      prompt: "Введите IP Monitoring-сервера (в формате x.x.x.x)"
+      private: false
+  pre_tasks:
+    - name: Проверка формата IP (app_ip)
+      assert:
+        that: app_ip is match("^(?:[0-9]{1,3}\\.){3}[0-9]{1,3}$")
+        fail_msg: "❌ Неверный формат IP для APP-сервера!"
+    - name: Проверка формата IP (monitoring_ip)
+      assert:
+        that: monitoring_ip is match("^(?:[0-9]{1,3}\\.){3}[0-9]{1,3}$")
+        fail_msg: "❌ Неверный формат IP для Monitoring-сервера!"
+    - name: Установка фактов на все хосты
+      add_host:
+        name: monitoring-server
+        groups: monitoring
+        ansible_host: "{{ monitoring_ip }}"
+    - name: Установка фактов на все хосты
+      add_host:
+        name: app-server
+        groups: apps
+        ansible_host: "{{ app_ip }}"
+
+- name: Настройка APP-сервера
+  hosts: apps
+  become: true
+  roles:
+    - app
+
+- name: Настройка MONITORING-сервера
+  hosts: monitoring
+  become: true
+  roles:
+    - monitoring
+    - grafana_dashboards

@@ -1,0 +1,18 @@
+﻿- name: Ждём, пока Grafana станет доступна (порт 3000)
+  wait_for:
+    port: 3000
+    delay: 10
+    timeout: 60
+
+- name: Загружаем дашборды в Grafana через API
+  uri:
+    url: "http://localhost:3000/api/dashboards/db"
+    method: POST
+    user: admin
+    password: admin
+    headers:
+      Content-Type: "application/json"
+    body: "{{ lookup('file', item) }}"
+    body_format: json
+    status_code: [200, 412]
+  loop: "{{ lookup('fileglob', 'files/*.json', wantlist=True) }}"

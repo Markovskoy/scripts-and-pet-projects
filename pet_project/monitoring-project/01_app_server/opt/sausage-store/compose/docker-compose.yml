@@ -1,0 +1,30 @@
+﻿version: "3.8"
+
+services:
+    backend:
+      build:
+        context: ./backend
+      container_name: sausage-backend
+      volumes:
+        - /var/sausage-store/logs:/var/sausage-store/logs
+        - /var/sausage-store/reports:/var/sausage-store/reports
+      ports:
+        - "8080:8080"
+        - "9404:9404"
+      environment:
+        - REPORT_PATH=/var/sausage-store/reports
+        - LOG_PATH=/var/sausage-store/logs
+      restart: always
+
+
+    frontend:
+      build:
+        context: ./frontend
+      container_name: sausage-frontend
+      volumes:
+        - /var/log/nginx:/var/log/nginx
+      ports:
+        - "80:80"
+      depends_on:
+        - backend
+      restart: always

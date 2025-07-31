@@ -1,0 +1,57 @@
+﻿version: "3.9"
+
+services:
+  ssh1:
+    container_name: ssh1
+    build: ./servers
+    networks:
+      net:
+        ipv4_address: 172.30.0.10
+    ports:
+      - "2222:22"
+    volumes:
+      - ../python_scripts/command_to_server:/home/victor/scripts/command_to_server
+      - ssh1-ssh:/home/victor/.ssh
+      - ssh1-pip:/home/victor/.local
+    entrypoint: /entrypoint.sh
+
+  ssh2:
+    container_name: ssh2
+    build: ./servers
+    networks:
+      net:
+        ipv4_address: 172.30.0.11
+    ports:
+      - "2223:22"
+    volumes:
+      - ssh2-ssh:/home/victor/.ssh
+      - ssh2-pip:/home/victor/.local
+    entrypoint: /entrypoint.sh
+    
+  ssh3:
+    container_name: ssh3
+    build: ./servers
+    networks:
+      net:
+        ipv4_address: 172.30.0.12
+    ports:
+      - "2224:22"
+    volumes:
+      - ssh3-ssh:/home/victor/.ssh
+      - ssh3-pip:/home/victor/.local
+    entrypoint: /entrypoint.sh
+
+networks:
+  net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
+
+volumes:
+  ssh1-ssh:
+  ssh2-ssh:
+  ssh3-ssh:
+  ssh1-pip:
+  ssh2-pip:
+  ssh3-pip:

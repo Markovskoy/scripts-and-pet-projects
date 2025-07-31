@@ -1,0 +1,20 @@
+﻿Vagrant.configure("2") do |config|
+  config.vm.box = "generic/ubuntu2004"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = "1024"
+    v.cpus = 2
+  end
+  config.vm.provision "Installing_dependencies",type: "shell",path: "bootstrap.sh"
+  config.vm.provision "setup",type: "shell",path: "setup.sh"
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080   # Frontend
+  config.vm.network "forwarded_port", guest: 8080, host: 8180 # Backend
+
+  config.vm.synced_folder "./backend", "/home/vagrant/backend"
+  config.vm.synced_folder "./frontend", "/home/vagrant/frontend"
+  config.vm.synced_folder "./systemd", "/home/vagrant/systemd"
+
+  config.vm.network :forwarded_port,
+    guest: 80,
+    host: 8080
+end

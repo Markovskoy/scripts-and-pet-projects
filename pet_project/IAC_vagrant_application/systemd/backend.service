@@ -1,0 +1,19 @@
+﻿[Unit] 
+Description=Sausage Store Backend Service 
+After=network.target 
+
+[Service] 
+User=backend 
+WorkingDirectory=/opt/sausage-store/bin/ 
+ExecStart=/usr/bin/java  -jar sausage-store-0.0.1-SNAPSHOT.jar 
+Environment=REPORT_PATH=/var/sausage-store/reports Environment=LOG_PATH=/var/sausage-store/logs 
+Restart=always 
+RestartSec=5 
+
+LimitNOFILE=65536 
+
+LimitNPROC=4096 
+
+[Install] 
+
+WantedBy=multi-user.target
