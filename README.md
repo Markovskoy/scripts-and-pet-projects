@@ -1,4 +1,3 @@
-##  DevOps Portfolio – Виктор Марковской
 ![Purpose](https://img.shields.io/badge/type-Portfolio-important)
 ![Status](https://img.shields.io/badge/status-Demo-lightgrey)  
 
