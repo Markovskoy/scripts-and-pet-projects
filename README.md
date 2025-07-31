@@ -82,11 +82,10 @@ Repo/
  [Исходники и конфиги](https://github.com/Markovskoy/scripts-and-pet-projects/tree/main/work_scripts/ci_cd/gitlab/fullstack_ci)
  Используемые технологии: GitLab CI/CD, Maven, npm, Docker, systemd, nginx
  
- Цель: автоматическая сборка frontend и backend, генерация артефактов и уведомление в телеграмме
+ Цель: автоматическая сборка frontend и backend, статический анализ безопасности и качества кода, генерация артефактов и уведомление в телеграмме
 
 ####  Пример пайплайна в GitLab
 <img width="801" height="267" alt="image" src="https://github.com/user-attachments/assets/9c281ba5-ff03-482c-a4f7-0d95f00f3cae" />
-
 
 
 ---
