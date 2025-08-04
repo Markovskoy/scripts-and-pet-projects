@@ -61,8 +61,8 @@ Repo/
 | Тип           | Пример                                                                                      | Назначение                                                                 |
 |----------------|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
 |  Bash         | [khd.sh](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/work_scripts/bash_scripts/khd.sh)  | Мониторинг ETL, интеграция с Zabbix                                       |
-|  Python       | [`command_to_server`](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/pet_project/command_to_server/) | Инструмент отправки команд/файлов на множественные серверы через SSH |
-|  IaC / Vagrant | [`IAC_vagrant_application`](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/pet_project/IAC_vagrant_application/) | Развёртывание среды через Vagrant + systemd + nginx                      |
+|  Python       | [command_to_server](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/pet_project/command_to_server/) | Инструмент отправки команд/файлов на множественные серверы через SSH |
+|  IaC / Vagrant | [IAC_vagrant_application](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/pet_project/IAC_vagrant_application/) | Развёртывание среды через Vagrant + systemd + nginx                      |
 
 ###  Monitoring Stack (Prometheus + Grafana + Promtail + Loki)
 
@@ -78,6 +78,7 @@ Repo/
   <img src="https://github.com/user-attachments/assets/875cd137-831d-4ff5-99a1-0b77f1fd0759" width="49%" />
   <img src="https://github.com/user-attachments/assets/37d473a1-7fb6-4ddf-991d-8ccbfca8bdb8" width="49%" />
 </div>
+
 
 
 ### CI/CD Fullstack Pipeline (GitLab)
