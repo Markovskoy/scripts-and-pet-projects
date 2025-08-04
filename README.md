@@ -87,6 +87,9 @@ Repo/
 ####  Пример пайплайна в GitLab
 <img width="801" height="267" alt="image" src="https://github.com/user-attachments/assets/9c281ba5-ff03-482c-a4f7-0d95f00f3cae" />
 
+#### SonarQube отчёты
+
+<img width="986" height="324" alt="image" src="https://github.com/user-attachments/assets/6e968ed9-c5ac-4c67-aa2f-caafde996556" />
 
 ---
 
