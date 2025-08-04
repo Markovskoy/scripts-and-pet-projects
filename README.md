@@ -1,3 +1,6 @@
+[![View Repo](https://img.shields.io/badge/GitHub-Посмотреть_репозиторий-181717?logo=github)](https://github.com/Markovskoy/scripts-and-pet-projects)
+
+
 ![Purpose](https://img.shields.io/badge/type-Portfolio-important)
 ![Status](https://img.shields.io/badge/status-Demo-lightgrey)  
 
@@ -19,7 +22,7 @@
 
 ## Контакты
 
-[![Email](https://img.shields.io/badge/email-markovskoy%40mail.com-blue?logo=gmail&logoColor=white)](mailto:v_markovskoy@mail.ru)
+[![Email](https://img.shields.io/badge/email-v__markovskoy%40mail.ru-blue?logo=gmail&logoColor=white)](mailto:v_markovskoy@mail.ru)
 [![Telegram](https://img.shields.io/badge/Telegram-@Markovskoy-blue?logo=telegram)](https://t.me/Vixxt0r)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Victor%20Markovskoy-blue?logo=linkedin)](https://www.linkedin.com/in/viktor-markovskoy-9b2b522b9)
 
@@ -57,16 +60,17 @@ Repo/
 
 | Тип           | Пример                                                                                      | Назначение                                                                 |
 |----------------|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-|  Bash         | [`khd.sh`](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/work_scripts/bash_scripts/khd.sh)  | Мониторинг ETL, интеграция с Zabbix                                       |
+|  Bash         | [khd.sh](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/work_scripts/bash_scripts/khd.sh)  | Мониторинг ETL, интеграция с Zabbix                                       |
 |  Python       | [`command_to_server`](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/pet_project/command_to_server/) | Инструмент отправки команд/файлов на множественные серверы через SSH |
 |  IaC / Vagrant | [`IAC_vagrant_application`](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/pet_project/IAC_vagrant_application/) | Развёртывание среды через Vagrant + systemd + nginx                      |
 
 ###  Monitoring Stack (Prometheus + Grafana + Promtail + Loki)
 
  [Исходники и конфиги](https://github.com/Markovskoy/scripts-and-pet-projects/blob/main/pet_project/monitoring-project/)
- Используемые технологии: Docker, Prometheus, Grafana, Loki, Promtail  
+
+Используемые технологии: Docker, Prometheus, Grafana, Loki, Promtail  
  
- Цель: мониторинг backend/frontend + логирование контейнеров
+Цель: мониторинг backend/frontend + логирование контейнеров
 
 ####  Скриншот дашбордов Grafana
 
@@ -79,14 +83,17 @@ Repo/
 ### CI/CD Fullstack Pipeline (GitLab)
 
  [Исходники и конфиги](https://github.com/Markovskoy/scripts-and-pet-projects/tree/main/work_scripts/ci_cd/gitlab/fullstack_ci)
- Используемые технологии: GitLab CI/CD, Maven, npm, , Semgrep, Nodejs-scan, SonarQube
  
- Цель: автоматическая сборка frontend и backend, статический анализ безопасности и качества кода, генерация артефактов и уведомление в телеграмме
+Используемые технологии: GitLab CI/CD, Maven, npm, , Semgrep, Nodejs-scan, SonarQube
+ 
+Цель: автоматическая сборка frontend и backend, статический анализ безопасности и качества кода, генерация артефактов и уведомление в телеграмме
 
 ####  Пример пайплайна в GitLab
 <img width="801" height="267" alt="image" src="https://github.com/user-attachments/assets/d7aa67d3-4cfe-40da-95b2-9b5f9bf7f171" />
 
+#### SonarQube отчёты
 
+<img width="986" height="324" alt="image" src="https://github.com/user-attachments/assets/6e968ed9-c5ac-4c67-aa2f-caafde996556" />
 
 ---
 
